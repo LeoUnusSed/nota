@@ -27,40 +27,39 @@ function App(props) {
 
   return (
     <>
-      <div>
+    
+      <div class="topp">
         <a href="https://hypech.com" target="_blank"><img src={viteLogo} className="logo" alt="Vite logo" /></a>
         <a href="https://hypech.com" target="_blank"><img src={reactLogo} className="logo react" alt="React logo" /></a>
+        <h3>Nota: Minimalist notes</h3>
       </div>
+
+      <div class="container">
       
-      <h1>Nota: Focus on what's essential.</h1>
-      <div className="card">
-        <ul>
-          {notes.map(note => 
-            <Note key={note.id} note={note} />
-          )}
-        </ul>
+        <div class="chat-body">
+          <ul>
+            {notes.map(note => 
+              <Note key={note.id} note={note} />
+            )}
+          </ul>
+        </div>
 
-        <form onSubmit={addNote} className="chat-form">
-          
-          <textarea 
-            placeholder="Type a note..."
-            value={newNote}
-            onChange={handleNoteChange}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) {
-                addNote(); // Call addNote function on Enter key press
-              }}}
-            rows={5} // Adjust the number of rows as needed
-          />
-          <button type="submit">Send</button>
-        </form>
+        <div class="chat-input">
+          <form onSubmit={addNote} className="chat-form">
+            
+            <textarea 
+              placeholder="Type a note..."
+              value={newNote}
+              onChange={handleNoteChange}
+              rows={2} // Adjust the number of rows as needed
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <p className="read-the-docs">The minimalist note-taking app for daily tasks and journaling. Write, remember, forget nothing.</p>
+
       </div>
-
-      <p className="read-the-docs">The minimalist note-taking app for daily tasks and journaling. Write, remember, forget nothing.</p>
-
-      <div>
-      </div>
-
     </>
   )
 }
