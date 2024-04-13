@@ -3,14 +3,27 @@ import reactLogo from '/images/nota_logo_2.jpg'
 import viteLogo from '/images/nota_logo_1.jpg'
 import './css/App.css'
 import Note from './components/Note'
+// style={{ background: '#0652c0', color: 'var(--light-color)', alignSelf: 'flex-start', borderRadius: '10px 10px 3px 10px' }}>
+
+function getDate() {
+  const today = new Date();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const date = today.getDate();
+  const showTime = today.getHours() + ':' + today.getMinutes() ;
+  return `${month}/${date}/${year} ${showTime}`;
+}
 
 function App(props) {
   const [notes, setNotes] = useState(props.notes)
-  const [newNote, setNewNote] = useState('a new note...') 
+  const [newNote, setNewNote] = useState('Nota: ') 
+
+	let myDate = getDate();
 
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
+      timestamp: getDate(),
       content: newNote,
       important: Math.random() < 0.5,
       id: notes.length + 1,
@@ -35,9 +48,8 @@ function App(props) {
       </div>
 
       <div class="container">
-      
         <div class="chat-body">
-          <ul>
+          <ul class="chatbot-message"> 
             {notes.map(note => 
               <Note key={note.id} note={note} />
             )}
@@ -63,6 +75,5 @@ function App(props) {
     </>
   )
 }
-
 
 export default App

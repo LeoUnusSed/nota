@@ -1,4 +1,5 @@
 #root {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
@@ -62,7 +63,7 @@
   display: flex;
   flex-direction: column-reverse;
   padding: 8px 10px;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   overflow-y: auto;
 }
 
@@ -103,4 +104,20 @@
 
 .chat-form button:hover {
   background-color: #0056b3;
+}
+
+.chatbot-message {
+  padding: auto;
+  margin-bottom: auto;
+  
+  align-self: flex-start;
+  border-radius: 1px 1px 3px 1px;
+}
+
+.chatbot-message ul {
+  padding-left: 0; /* Remove indentation */
+}
+.chatbot-message li {
+  margin-bottom: 10px; /* Adjust the value as needed */
+  list-style: none;
 }
