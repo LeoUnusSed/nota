@@ -1,36 +1,44 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
+import './css/App.css'
 import reactLogo from '/images/nota_logo_2.jpg'
 import viteLogo from '/images/nota_logo_1.jpg'
-import './css/App.css'
+
 import Note from './components/Note'
-// style={{ background: '#0652c0', color: 'var(--light-color)', alignSelf: 'flex-start', borderRadius: '10px 10px 3px 10px' }}>
+import noteService from './components/communication'
+import getDate from './components/GetDate'
 
-function getDate() {
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const year = today.getFullYear();
-  const date = today.getDate();
-  const showTime = today.getHours() + ':' + today.getMinutes() ;
-  return `${month}/${date}/${year} ${showTime}`;
-}
-
-function App(props) {
-  const [notes, setNotes] = useState(props.notes)
+const App = () => {
+  const [notes, setNotes] = useState([])
+  const [showAll, setShowAll] = useState(true)
   const [newNote, setNewNote] = useState('Nota: ') 
 
-	let myDate = getDate();
+  const hook = () => {
+    console.log('effect')
+    noteService.getAll()
+               .then(response => {
+                  console.log('promised fulfileeeed')
+                  setNotes(response.data)
+              })
+  }
+  useEffect(hook, []) 
 
   const addNote = (event) => {
     event.preventDefault()
+    console.log('button clicked', event.target)
     const noteObject = {
+      userid: '111111',
       timestamp: getDate(),
       content: newNote,
-      important: Math.random() < 0.5,
-      id: notes.length + 1,
     }
-  
-    setNotes(notes.concat(noteObject))
-    setNewNote('')
+
+    noteService
+      .create(noteObject)
+      .then(response => {
+        setNotes(notes.concat(response.data))
+        setNewNote('')
+      })
   }
 
   const handleNoteChange = (event) => {
@@ -40,7 +48,6 @@ function App(props) {
 
   return (
     <>
-    
       <div class="topp">
         <a href="https://hypech.com" target="_blank"><img src={viteLogo} className="logo" alt="Vite logo" /></a>
         <a href="https://hypech.com" target="_blank"><img src={reactLogo} className="logo react" alt="React logo" /></a>
