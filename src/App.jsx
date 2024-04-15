@@ -9,7 +9,7 @@ import getDate from './components/GetDate'
 const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('Nota: ') 
-  const [userId, setUserId] = useState('');
+  const [userId, setUserId] = useState(null);
 
   const handleLogin = (userId) => {
     // Receive userId from the Login component and set it in App.jsx state
@@ -72,7 +72,8 @@ const App = () => {
       <div class="container">
         <div class="chat-body">
           <ul class="chatbot-message"> 
-            {notes.map(note => 
+            {notes.filter((note) => note.userid === userId)
+              .map(note => 
               <Note key={note.id} note={note} />
             )}
           </ul>

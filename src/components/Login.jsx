@@ -20,7 +20,6 @@ const Login = ({ onLogin })=>{
             const userId = result.data.userId
             onLogin(userId);
             setShowLoginForm(false);
-            setShowWelcome(false);
         }else{
             // navigate("/register")
             event.preventDefault()
