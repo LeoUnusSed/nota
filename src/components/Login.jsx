@@ -7,16 +7,9 @@ import viteLogo from '/images/nota_logo_1.jpg'
 import '/src/css/login.css'
 
 const Login = ({ onLogin })=>{
-  const [showLoginForm,setShowLoginForm] = useState(false);
-  const [showSaveButton,setShowSaveButton] = useState(true);
-  const [showWelcome,  setShowWelcome]   = useState(true);
+  const [showLoginForm,setShowLoginForm] = useState(true);
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-
-  const handleSaveClick = (event) => {
-    console.log('event.target.value')
-    setShowSaveButton(false);
-    setShowLoginForm(true);};
   
   const handleLoginRegisterClick = (event) => {
     event.preventDefault()
@@ -31,10 +24,9 @@ const Login = ({ onLogin })=>{
         }else{
             // navigate("/register")
             event.preventDefault()
-            alert("You are not registered to this service")
             axios.post("http://localhost:3001/register", { email, password })
             .then(result => {console.log(result)
-              alert("You are registered to service")
+              alert("Successfully registered!")
             })
             .catch(err => console.log(err))
         }
@@ -49,7 +41,6 @@ const Login = ({ onLogin })=>{
         <a href="https://hypech.com" target="_blank"><img src={reactLogo} className="logo react" alt="React logo" /></a>
         
         <h3>Nota: Minimalist notes</h3>
-        {showSaveButton && (<button onClick={handleSaveClick}>Save</button>)}
 
         {showLoginForm && (
           <section class="login-form-wrap">
@@ -65,7 +56,7 @@ const Login = ({ onLogin })=>{
           </section>
         )}
 
-        {!showWelcome && (
+        {!showLoginForm && (
           <section class="login-form-wrap">
             <h4>Welcome</h4>
             {email}
