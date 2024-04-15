@@ -9,6 +9,12 @@ import getDate from './components/GetDate'
 const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('Nota: ') 
+  const [userId, setUserId] = useState('');
+
+  const handleLogin = (userId) => {
+    // Receive userId from the Login component and set it in App.jsx state
+    setUserId(userId);
+  };
 
   const hook = () => {
     console.log('effect')
@@ -24,7 +30,7 @@ const App = () => {
     event.preventDefault()
     console.log('button clicked', event.target)
     const noteObject = {
-      userid: '111111',
+      userid: userId,
       timestamp: getDate(),
       content: newNote,
     }
@@ -62,7 +68,7 @@ const App = () => {
 
   return (
     <>
-      <Login />
+      <Login onLogin={handleLogin} />
       <div class="container">
         <div class="chat-body">
           <ul class="chatbot-message"> 

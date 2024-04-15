@@ -1,14 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 import reactLogo from '/images/nota_logo_2.jpg'
 import viteLogo from '/images/nota_logo_1.jpg'
 import '/src/css/login.css'
 
-const Login = ()=>{
+const Login = ({ onLogin })=>{
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -22,8 +20,11 @@ const Login = ()=>{
     axios.post("http://localhost:3001/login", { email, password })
     .then(result => {
         console.log(result)
-        if(result.data === "Success"){
+        if(result.data.status === "Success"){
+            const userId = result.data.userId
+            onLogin(userId);
             console.log(event.target.value)
+            console.log(userId)
             alert("Logined!")
         }else{
             // navigate("/register")
@@ -34,13 +35,9 @@ const Login = ()=>{
               alert("You are registered to service")
             })
             .catch(err => console.log(err))
-    
-
         }
-   
     })
     .catch(err => console.log(err))
-
   }
   
   return(
@@ -65,33 +62,6 @@ const Login = ()=>{
             </form>
           </section>
         )}
-
-        {/* <form onSubmit={handleLogin} className="screen-1"> */}
-        {/* <form onSubmit={handleLogin} className="login-form"> */}
-                
-                {/* <div className="email">
-                    <input type="text" 
-                    placeholder='Enter Email' 
-                    autoComplete='off' 
-                    name='email' 
-                    className='form-control rounded-0' 
-                    onChange={(e) => setEmail(e.target.value)}
-
-                    />
-                </div>
-                <div className="password">
-                    <input type="password" 
-                    placeholder='Enter Password' 
-                    name='password' 
-                    className='form-control rounded-0' 
-                    onChange={(e) => setPassword(e.target.value)}
-
-                    />
-                </div>
-                <button type="submit" className="login">
-                    Login
-                </button>
-                </form> */}
 
       </div>
     </>
