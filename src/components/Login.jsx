@@ -7,12 +7,15 @@ import viteLogo from '/images/nota_logo_1.jpg'
 import '/src/css/login.css'
 
 const Login = ({ onLogin })=>{
-  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showLoginForm,setShowLoginForm] = useState(false);
+  const [showSaveButton,setShowSaveButton] = useState(true);
+  const [showWelcome,  setShowWelcome]   = useState(true);
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
   const handleSaveClick = (event) => {
     console.log('event.target.value')
+    setShowSaveButton(false);
     setShowLoginForm(true);};
   
   const handleLoginRegisterClick = (event) => {
@@ -23,9 +26,8 @@ const Login = ({ onLogin })=>{
         if(result.data.status === "Success"){
             const userId = result.data.userId
             onLogin(userId);
-            console.log(event.target.value)
-            console.log(userId)
-            alert("Logined!")
+            setShowLoginForm(false);
+            setShowWelcome(false);
         }else{
             // navigate("/register")
             event.preventDefault()
@@ -47,7 +49,7 @@ const Login = ({ onLogin })=>{
         <a href="https://hypech.com" target="_blank"><img src={reactLogo} className="logo react" alt="React logo" /></a>
         
         <h3>Nota: Minimalist notes</h3>
-        {!showLoginForm && (<button onClick={handleSaveClick}>Save</button>)}
+        {showSaveButton && (<button onClick={handleSaveClick}>Save</button>)}
 
         {showLoginForm && (
           <section class="login-form-wrap">
@@ -60,6 +62,14 @@ const Login = ({ onLogin })=>{
               </label>
               <input type="submit" value="Login/Register" />
             </form>
+          </section>
+        )}
+
+        {!showWelcome && (
+          <section class="login-form-wrap">
+            <h4>Welcome</h4>
+            {email}
+            <p>The Memo saved!</p>
           </section>
         )}
 
