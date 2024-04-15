@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 import './css/App.css'
-import reactLogo from '/images/nota_logo_2.jpg'
-import viteLogo from '/images/nota_logo_1.jpg'
-
+import Login from './components/Login'
 import Note from './components/Note'
 import noteService from './components/communication'
 import getDate from './components/GetDate'
 
 const App = () => {
   const [notes, setNotes] = useState([])
-  const [showAll, setShowAll] = useState(true)
   const [newNote, setNewNote] = useState('Nota: ') 
 
   const hook = () => {
@@ -46,14 +42,27 @@ const App = () => {
     setNewNote(event.target.value)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post("http://localhost:3001/login", { email, password })
+    .then(result => {
+        console.log(result)
+        if(result.data === "Success"){
+            navigate("/home")
+        }else{
+            navigate("/register")
+            alert("You are not registered to this service")
+
+        }
+   
+    })
+    .catch(err => console.log(err))
+}
+
+
   return (
     <>
-      <div class="topp">
-        <a href="https://hypech.com" target="_blank"><img src={viteLogo} className="logo" alt="Vite logo" /></a>
-        <a href="https://hypech.com" target="_blank"><img src={reactLogo} className="logo react" alt="React logo" /></a>
-        <h3>Nota: Minimalist notes</h3>
-      </div>
-
+      <Login />
       <div class="container">
         <div class="chat-body">
           <ul class="chatbot-message"> 
