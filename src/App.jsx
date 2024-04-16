@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Note from './components/Note'
 import noteService from './components/communication'
 import getDate from './components/GetDate'
+import config from './components/config';
 
 const App = () => {
   const [notes, setNotes] = useState([])
@@ -50,7 +51,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:3001/login", { email, password })
+    axios.post(`${config.baseURL}/login`, { email, password })
     .then(result => {
         console.log(result)
         if(result.data === "Success"){

@@ -50,4 +50,4 @@ Nota - The minimalist note-taking app that lets you focus on what's important.
 Nota - Declutter your mind, one note at a time.
 Nota - Simple, powerful note-taking for a productive day.
 
-
+</div> 

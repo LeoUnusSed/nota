@@ -4,6 +4,8 @@ import axios from 'axios'
 
 import reactLogo from '/images/nota_logo_2.jpg'
 import viteLogo from '/images/nota_logo_1.jpg'
+import config from './config';
+
 import '/src/css/login.css'
 
 const Login = ({ onLogin })=>{
@@ -13,7 +15,7 @@ const Login = ({ onLogin })=>{
   
   const handleLoginRegisterClick = (event) => {
     event.preventDefault()
-    axios.post("http://localhost:3001/login", { email, password })
+    axios.post(`${config.baseURL}/login`, { email, password })
     .then(result => {
         console.log(result)
         if(result.data.status === "Success"){
@@ -23,7 +25,7 @@ const Login = ({ onLogin })=>{
         }else{
             // navigate("/register")
             event.preventDefault()
-            axios.post("http://localhost:3001/register", { email, password })
+            axios.post(`${config.baseURL}/register`, { email, password })
             .then(result => {console.log(result)
               alert("Successfully registered!")
             })
