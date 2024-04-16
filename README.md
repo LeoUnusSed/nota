@@ -14,7 +14,6 @@
 [![Postgres Version](https://img.shields.io/badge/postgresql-13,_14,_15,_16-green.svg?logo=postgresql&style=flat)](https://www.postgresql.org)
 [![npm latest version](https://img.shields.io/npm/v/parse-server/latest.svg)](https://www.npmjs.com/package/parse-server)
 [![GitHub Release](https://img.shields.io/github/v/release/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter)](https://github.com/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter)](https://github.com/aixpertlab/)
  
 [![Official Website](<https://img.shields.io/badge/-Visit%20the%20Official%20Website%20%E2%86%92-rgb(21,204,116)?style=for-the-badge>)](https://hypech.com)
 
@@ -26,76 +25,29 @@
 
 </div> 
 
-The AI-powered solution enables customers to integrate their specialized knowledge with OpenAI models to automate the extraction of relevant information from websites of their interest, effectively training the AI to deliver tailored results as if it were trained on their unique dataset.
+Nota: Notes that keep it simple.
+Nota: Capture thoughts, effortlessly.
+Nota: The minimalist way to take notes.
+Nota - Uncluttered note-taking for clear thinking.
+Nota - Write down what matters, simply.
+Nota - The lightweight way to capture daily ideas.
+Nota: Keep track of what matters, every day.
+Nota: Your daily record, always at hand.
+Nota: Never forget a thing.
+Nota - Build a record of your daily tasks and ideas.
+Nota - Your daily journal, made simple.
+Nota - Archive your notes for future reference, effortlessly.
+Nota: Simply capture and remember what matters.
+Nota: Minimalist notes for your daily record.
+Nota: Write, remember, forget nothing.
+Nota - Easily jot down daily notes and keep a record.
+Nota - The minimalist note-taking app for daily tasks and journaling.
+Nota - Capture quick notes and build a simple record of your day.
+Nota: Less clutter, more clarity.
+Nota: Focus on what's essential.
+Nota: Write. Remember. Done.
+Nota - The minimalist note-taking app that lets you focus on what's important.
+Nota - Declutter your mind, one note at a time.
+Nota - Simple, powerful note-taking for a productive day.
 
-- [GPT-4 from OpenAI](#architecture)
-- [Powered by Python](#architecture)
-- [Intuitive User Interface](#architecture)
 
-You will get Unlock Your Personalized AI Assistant Effortlessly: Scrape, Upload, and Go.
-
-> [!WARNING]  
-> **Website Scraping Policy**
-> 
-> This project utilizes web scraping techniques to gather data from various websites. It's important to note that not all websites allow scraping, and some may have strict policies against it.
->
-> This project is not about web scraping for illegal purposes. Make sure you have permission before extracting content. Ways to check include:
-> - Review the website’s terms of use. Look for mentions of scraping permissions.
-> - Use APIs when available. APIs provide legal access to data.
-> - Please contact the website owner to clarify your permission directly.
-
-> **Before using this project**
->
-> Take the time to carefully read and understand the scraping policies of each website from which you intend to scrape data. These policies can usually be found in the website's terms of service or robots.txt file.
->
-> **Comply with Policies** 
->
->Ensure that you comply with the scraping policies of each website. Violating these policies could lead to consequences such as account restrictions, IP bans, or legal action.
-
-> [!NOTE] 
-> **Disclaimer**
-> 
->This project is provided for general-purpose use, and we do not take responsibility for any consequences resulting from the misuse of web scraping techniques. Users are solely responsible for ensuring compliance with website scraping policies and any associated risks.
-
-# Overview
-
-There's a saying that goes, 'the job hunt is a job in itself.' Indeed, a significant amount of energy and time is often spent tailoring cover letters to match each job application. With the assistance of an AI, we can automate this process, drastically reducing the time it takes to prepare a cover letter to just a few seconds with a simple process of Scraping, Clicking, and Sending. Not only will your cover letter be fully customized, but it will also maintain a professional tone. Sounds promising, doesn't it? That's because it truly is.
-
-"Welcome to AI-Powered Job Assistance! Our innovative platform automatically tailors cover letters by scraping job descriptions and seamlessly integrating them with your resume. Review before sending and find your perfect fit with ease. Your dream job awaits!"
-
-# Technology Stack
-
-1. OpenAI Assistant ChatGPT
-2. Python
-3. Selenium WebDriver
-
-Selenium will facilitate various tasks such as navigating between pages, completing forms (e.g., login credentials), clicking links, and scrolling down. Apart from data scraping, Selenium will be instrumental in automating the outlined steps to manage actions until accessing the pages for data extraction. We will extract job offers and job descriptions.
-
-Utilizing ChatGPT, known for its professional assistance, and leveraging your own resume as a knowledge base, ChatGPT will generate tailored resumes.
-
-Python serves as the intermediary connecting the website, ChatGPT, and your personal information. Tkinter GUI is employed to provide a user-friendly interface.
-
-# Quick start
-
-1. Python 3.12.2
-2. Selenium & chromedriver installed (watch how in this one).
-https://chromedriver.chromium.org/
-
-## Requirements
-
-- `python-dotenv`
-- `openai`
-- `selenium`
-
-------------------Video Instruction---------------------
-
-[Yourtube](https://youtu.be/TlnytEi2lD8?si=jfcDj2MZqBptziZc)
-
-```bash
-pip install -r requirements.txt
-```
-
-# Contribution
-
-https://github.com/Frrrrrrrrank/auto_job__find__chatgpt__rpa
-https://www.linkedin.com/pulse/automate-your-job-search-personalized-cover-letters-powered-leo-reny-elbye
