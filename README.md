@@ -1,22 +1,18 @@
-### AI-Powered Automatically Customize Cover Letter for Each Job Post
-> - AI-Powered, Customized, Cover Letters
+### Nota: Focus on essential.
+> - Less clutter, more clarity.
 > - AI Assistant Job Flow Automator. 
-> - Automate the customization of cover letters tailored to your resume and the unique requirements outlined in the job description extracted.
+> - The minimalist note-taking app that lets you focus on what's important.
 
 <div align="center">
 
 <a href='https://www.hypech.com'>
-<img src="/images/nota.png" alt="AI-Powered Cover Letter" height=300></img></a>
+<img src="./images/nota.png" alt="AI-Powered Cover Letter" height=400></img></a>
 <br></br>
 
-[![python](https://img.shields.io/badge/Python-3.12-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![jupyter](https://img.shields.io/badge/Jupyter-Lab-F37626.svg?style=flat&logo=Jupyter)](https://jupyterlab.readthedocs.io/en/stable)
-[![tensorflow](https://img.shields.io/badge/TensorFlow-1.12-FF6F00.svg?style=flat&logo=tensorflow)](https://www.tensorflow.org)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
-[![pydocstyle](https://img.shields.io/badge/pydocstyle-enabled-AD4CD3)](http://www.pydocstyle.org/en/stable/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Node Version](https://img.shields.io/badge/nodejs-18,_20-green.svg?logo=node.js&style=flat)](https://nodejs.org)
+[![MongoDB Version](https://img.shields.io/badge/mongodb-4.2,_4.4,_5,_6,_7-green.svg?logo=mongodb&style=flat)](https://www.mongodb.com)
+[![Postgres Version](https://img.shields.io/badge/postgresql-13,_14,_15,_16-green.svg?logo=postgresql&style=flat)](https://www.postgresql.org)
+[![npm latest version](https://img.shields.io/npm/v/parse-server/latest.svg)](https://www.npmjs.com/package/parse-server)
 [![GitHub Release](https://img.shields.io/github/v/release/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter)](https://github.com/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter/releases)
 [![GitHub Release Date](https://img.shields.io/github/release-date/aiXpertLab/AI-Powered-Automatically-Customize-Cover-Letter)](https://github.com/aixpertlab/)
  
