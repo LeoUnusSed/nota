@@ -1,13 +1,13 @@
 // ./services/NoteService.js
-const path = require('path');
-console.log('--------------Current directory:', __dirname);
-console.log('--------------Resolved path:', path.join(__dirname, '../models/Note'));
-const NoteModel = require(path.join(__dirname, '../models/Note'));
-// const Note = require('../models/Note.js');
+// const path = require('path');
+// console.log('--------------Current directory:', __dirname);
+// console.log('--------------Resolved path:', path.join(__dirname, '../models/Note'));
+// const NoteModel = require(path.join(__dirname, '../models/Note'));
+const NoteModel = require('./note.model');
 
 exports.getNotes = async () => {
     try {
-        const notes = await Note.find({});
+        const notes = await NoteModel.find({});
         return notes;
     } catch (error) {
         throw error; // Re-throw error for handling in controller
