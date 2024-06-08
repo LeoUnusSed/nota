@@ -1,6 +1,8 @@
 // ./services/userService.js
 // const UserModel = require('../models/User');
 const path = require('path');
+console.log('========Current directory:', __dirname);
+console.log('========Resolved path:', path.join(__dirname, '../models/User'));
 const UserModel = require(path.resolve(__dirname, '../models/User'));
 
 exports.createUser = async userData => {
