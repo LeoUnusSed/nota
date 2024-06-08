@@ -1,6 +1,6 @@
 // ./services/NoteService.js
 const path = require('path');
-const Note = require(path.resolve(__dirname, '../models/Note'));
+const Note = require(path.resolve(__dirname, '../models/Note.js'));
 
 // const Note = require('../models/Note.js');
 
