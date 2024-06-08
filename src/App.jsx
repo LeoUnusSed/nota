@@ -70,9 +70,9 @@ const App = () => {
   return (
     <>
       <Login onLogin={handleLogin} />
-      <div class="container">
-        <div class="chat-body">
-          <ul class="chatbot-message"> 
+      <div className="container">
+        <div className="chat-body">
+          <ul className="chatbot-message"> 
             {notes.filter((note) => note.userid === userId)
               .map(note => 
               <Note key={note.id} note={note} />
@@ -80,7 +80,7 @@ const App = () => {
           </ul>
         </div>
 
-        <div class="chat-input">
+        <div className="chat-input">
           <form onSubmit={addNote} className="chat-form">
             
             <textarea 

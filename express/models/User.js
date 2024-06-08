@@ -1,23 +1,28 @@
 const mongoose = require('mongoose')
-
-mongoose.set('strictQuery', false)
-
-const url = process.env.MONGO_NOTA_URI
-
-console.log('connecting to', url.slice(0,30))
-mongoose.connect(url)
-  .then(result => {
-    console.log('connected to MongoDB')
-  })
-  .catch((error) => {
-    console.log('error connecting to MongoDB:', error.message)
-  })
+const bcryptjs = require('bcryptjs'); // Import bcryptjs
 
 const UserSchema = new mongoose.Schema({
-
    email:String,
    password:String
 })
+
+// Hash password before saving
+UserSchema.methods.comparePassword = async function(candidatePassword) {
+  try {
+    if (!this.password) {
+      throw new Error('Password is not set');
+    }
+    return await bcryptjs.compare(candidatePassword, this.password);
+  } catch (error) {
+    console.error('Error comparing passwords:', error.message);
+    return false; // Return false in case of error
+  }
+};
+
+// Add comparePassword method
+UserSchema.methods.comparePassword = async function (candidatePassword) {
+  return await bcryptjs.compare(candidatePassword, this.password); // Compare hashed password with provided password
+};
 
 UserSchema.set('toJSON', {
    transform: (document, returnedObject) => {
