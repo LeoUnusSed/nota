@@ -1,5 +1,8 @@
 // ./services/NoteService.js
-const Note = require('../models/Note.js');
+const path = require('path');
+const Note = require(path.resolve(__dirname, '../models/Note'));
+
+// const Note = require('../models/Note.js');
 
 exports.getNotes = async () => {
     try {

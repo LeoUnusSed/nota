@@ -1,5 +1,7 @@
 // ./services/userService.js
-const UserModel = require('../models/User');
+// const UserModel = require('../models/User');
+const path = require('path');
+const UserModel = require(path.resolve(__dirname, '../models/User'));
 
 exports.createUser = async userData => {
     console.log('-----------------1----------------------')
@@ -10,7 +12,6 @@ exports.createUser = async userData => {
     } catch (error){
         throw new Error('error in creating user')
     }
-
 }
 
 
