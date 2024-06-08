@@ -22,5 +22,5 @@ app.use(errorHandler);     // Handle other errors last
 const mongodb = require('./database/Mongo.database');
 mongodb.connectToDatabase();
 
-const PORT = process.env.MONGODB_PORT  || 3001
+const PORT = process.env.MONGODB_PORT
 app.listen(PORT, () => {  console.log(`Server running on port ${PORT}`)})
