@@ -16,30 +16,6 @@ exports.createUser = async userData => {
     }
 }
 
-
-// exports.getUser = async (email, password) => {
-//     console.log('---------------2------------------------')
-//     console.log(email)
-//     try {
-//         const user = await UserModel.findOne({ email: email });
-
-//         if (!user) {
-//             throw new Error('No record found'); // Throw an error instead of returning a response
-//         }
-
-//         const isMatch = await user.comparePassword(password); // Assuming a comparePassword method exists on the user model
-
-//         if (isMatch) {
-//             return { status: "Success", userId: user._id }; // Return the data
-//         } else {
-//             throw new Error('Invalid credentials'); // Throw an error for invalid credentials
-//         }
-//     } catch (error) {
-//         console.error(error); // Log the error for debugging
-//         throw new Error('Internal server error getUser'); // Throw a generic error for the controller to handle
-//     }
-// };
-
 exports.getUser = async (email, password) => {
     console.log('---------------2------------------------')
     console.log(email)

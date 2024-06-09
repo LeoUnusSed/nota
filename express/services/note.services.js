@@ -3,7 +3,7 @@
 // console.log('--------------Current directory:', __dirname);
 // console.log('--------------Resolved path:', path.join(__dirname, '../models/Note'));
 // const NoteModel = require(path.join(__dirname, '../models/Note'));
-const NoteModel = require('./note.model');
+const NoteModel = require('../models/note.model');
 
 exports.getNotes = async () => {
     try {
